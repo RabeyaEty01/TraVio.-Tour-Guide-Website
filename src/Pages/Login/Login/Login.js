@@ -1,8 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import loginImg from '../../images/login.jpg';
+import { Link,useHistory ,useLocation } from 'react-router-dom';
+import loginImg from '../../../images/login.jpg';
+import useAuth from '../../../Hooks/useAuth';
 import './Login.css';
 const Login = () => {
+    const {signInUsingGoogle} = useAuth();
+    const location =useLocation();
+    const history = useHistory();
+    const redirect_uri= location.state?.from ||'/home';
+        
+        const handleGoogleLogin =()=>{
+             signInUsingGoogle()
+              .then(result => {
+               history.push(redirect_uri);
+            })
+           
+        }
+
     return (
         <section className="Form my-4 mx-5">
             <div className="container">
@@ -37,7 +51,7 @@ const Login = () => {
 
                             <div className="form-row">
                                 <div className="col-lg-7">
-                                    <button type="button" className="btn1 mt-3 mb-5">Sign In With Google</button>
+                                    <button onClick={handleGoogleLogin} type="button" className="btn1 mt-3 mb-5"><i class="fab fa-google "></i> Sign In With Google</button>
                                 </div>
                             </div>
 
