@@ -1,27 +1,27 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
-//import logo from '../../../images/logo-2.png';
+import logo from '../../../images/logo1.png';
+import logo1 from '../../../images/logo.png';
 import useAuth from '../../../Hooks/useAuth';
+import './Header.css';
 
 
 const Header = () => {
     const { user, logOut } = useAuth();
 
-
     return (
         <>
-            <Navbar bg="light" sticky="top" collapseOnSelect expand="lg">
+            <Navbar bg="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
-                    {/* <Navbar.Brand href="#home">
-                        <img className="justify-content-start" height="50px" width="300px" src={logo} alt="" />
-                    </Navbar.Brand> */}
                     <Navbar.Toggle />
+                    <Navbar.Brand href="#home">
+                        <img className="justify-content-start" height="50px" width="80px" src={logo1} alt="" />
+                        <img className="justify-content-start" height="30px" width="150px" src={logo} alt="" />
+                    </Navbar.Brand>
+
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="#">Blogs</Nav.Link>
-
-
-
                         {user.email &&
 
                             <>

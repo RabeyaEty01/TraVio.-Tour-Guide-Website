@@ -1,3 +1,12 @@
-.banner-carousel img{
+.carousel-item img{
     height: 650px;
+}
+
+.carousel-caption{
+    position: absolute;
+    margin: 0;
+    background-color: rgba(68, 61, 61, 0.466);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
