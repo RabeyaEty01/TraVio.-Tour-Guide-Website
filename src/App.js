@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Pages/Shared/Header/Header';
-import Home from './Pages/Home/Home';
+
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import MyOrders from './Pages/MyOrders/MyOrders';
@@ -10,6 +10,7 @@ import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import AddService from './Pages/AddService/AddService';
 import NotFound from './Pages/NotFound/NotFound';
 import PrivateRoute from '../src/Pages/Login/PrivateRoute/PrivateRoute';
+import Home from './Pages/Home/Home/Home';
 
 function App() {
   return (
