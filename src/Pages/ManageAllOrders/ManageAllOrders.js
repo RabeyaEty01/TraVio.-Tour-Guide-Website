@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [])
+    }, []);
 
   //DELETE Booked Order
   const handleDeleteBookedOrder = id => {
@@ -66,7 +66,7 @@ const ManageAllOrders = () => {
                             <button className="btn btn-success">Approval</button>
                             </td>
                             <td>
-                            <button onClick={() => handleDeleteBookedOrder(order._id)}className="btn btn-danger">Delete</button>
+                            <button onClick={() => handleDeleteBookedOrder(order._id)} className="btn btn-danger">Delete</button>
                             </td>
                         </tr>
 

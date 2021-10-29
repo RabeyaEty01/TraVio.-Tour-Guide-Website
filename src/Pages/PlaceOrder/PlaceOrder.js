@@ -63,7 +63,8 @@ const PlaceOrder = () => {
 
                         <textarea required className="rounded p-2 m-2" placeholder="Additional Note" {...register("note")} />
 
-                        <input readOnly className="rounded p-2 m-2" defaultValue={service.price} {...register("price")} />
+                        <input readOnly className="rounded p-2 m-2" defaultValue={service.price}
+                        {...register("price")} />
 
                         {errors.exampleRequired && <span>This field is required</span>}
 

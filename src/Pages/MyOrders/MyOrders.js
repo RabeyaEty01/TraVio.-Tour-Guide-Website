@@ -6,13 +6,33 @@ const MyOrders = () => {
     const email = `${user.email}`;
     const [myOrders, setMyOrders] = useState([]);
 
-
     useEffect(() => {
         fetch(`http://localhost:5000/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, []);
 
+
+
+    //DELETE Booked Order
+    const handleDeleteBookedOrder = id => {
+        const proceed = window.confirm('Are you sure , you want to delete?');
+        if (proceed) {
+            const url = `http://localhost:5000/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted successfully');
+
+                        const remainingOrders = myOrders.filter(order => order._id !== id);
+                        setMyOrders(remainingOrders);
+                    }
+                })
+        }
+    }
 
     return (
         <div className="container">
@@ -38,7 +58,7 @@ const MyOrders = () => {
                                                     <h4 className="card-text text-success">Status: {order.status}</h4>
                                                 </div>
 
-                                                <button className="btn btn-danger">Cancel Order</button>
+                                                <button onClick={() => handleDeleteBookedOrder(order._id)} className="btn btn-danger">Cancel Order</button>
                                             </div>
 
                                         </div>
@@ -52,7 +72,7 @@ const MyOrders = () => {
 
                     </div>
                 </div>
-             
+
             </div>
         </div>
     );
