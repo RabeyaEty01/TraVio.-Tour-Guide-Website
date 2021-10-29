@@ -28,7 +28,7 @@ const AddService = () => {
                         <img className="img-fluid h-100 w-100" src={addserviceimg} alt="" />
                     </div>
                     <div className="col-lg-7 px-5 pt-5 text-start">
-                    <h2 className="m-3 p-2">Please Add A Package</h2>
+                    <h2 className="m-3 p-2">Please Add A New Package</h2>
                         <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
                             <input required className="rounded p-2 m-2 " placeholder="Name" {...register("name")} />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -10,7 +11,7 @@ const Services = () => {
             .then(data => setServices(data))
     }, []);
     return (
-        <div>
+        <div className="container">
             <h1>Our Tour Packages</h1>
             <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
                     {
@@ -24,7 +25,9 @@ const Services = () => {
                                     </div>
                                     <p class="card-text text-center text-secondary">{service?.description}</p>
                                     <h3 class="card-text fw-bold"> ${service?.price}</h3>
-                                  <button className="btn btn-danger">Book Now</button>
+                                 <Link to={`/services/booking/${service._id}`}>
+                                 <button className="bt btn-danger">Book Now</button>
+                                 </Link>
                                 </div>
                             </div>
                         </div>

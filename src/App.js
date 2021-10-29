@@ -11,6 +11,7 @@ import AddService from './Pages/AddService/AddService';
 import NotFound from './Pages/NotFound/NotFound';
 import PrivateRoute from '../src/Pages/Login/PrivateRoute/PrivateRoute';
 import Home from './Pages/Home/Home/Home';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute exact path="/addService">
             <AddService></AddService>
+          </PrivateRoute>
+          <PrivateRoute exact path="/services/booking/:id">
+            <PlaceOrder></PlaceOrder>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
