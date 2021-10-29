@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
 
@@ -9,12 +10,35 @@ const ManageAllOrders = () => {
             .then(data => setOrders(data));
     }, [])
 
+  //DELETE Booked Order
+  const handleDeleteBookedOrder = id => {
+    const proceed =window.confirm('Are you sure , you want to delete?');
+    if(proceed){
+     const url = `http://localhost:5000/orders/${id}`;
+     fetch(url, {
+         method: 'DELETE'
+     })
+         .then(res => res.json())
+         .then(data => {
+             if (data.deletedCount > 0){
+                 alert('Deleted successfully');
+
+                 const remainingOrders=orders.filter(order=>order._id !== id);
+                 setOrders(remainingOrders);
+             }
+     })
+    }
+ }
+
+
+
+
     return (
-        <div className="container">
+        <div className="container my-5">
         <h2 className="fw-bold text-primary text-center">Manage All Bookings</h2>
         <div>
-            <table class="table table-striped table-bordered table-hover">
-                <thead>
+            <table class="table table-responsive table-responsive-sm table-responsive-md shadow table-striped table-bordered table-hover">
+                <thead className="table-dark">
                     <tr>
                         <th scope="col">Order ID</th>
                         <th scope="col">Package Name</th>
@@ -42,7 +66,7 @@ const ManageAllOrders = () => {
                             <button className="btn btn-success">Approval</button>
                             </td>
                             <td>
-                            <button className="btn btn-danger">Delete</button>
+                            <button onClick={() => handleDeleteBookedOrder(order._id)}className="btn btn-danger">Delete</button>
                             </td>
                         </tr>
 

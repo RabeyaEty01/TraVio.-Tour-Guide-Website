@@ -20,7 +20,7 @@ const PlaceOrder = () => {
 
     //Place Order
     const onSubmit = (data) => {
-        data.status = "pending";
+        data.status = "Pending";
         data.serviceDetails = service;
 
         axios.post('http://localhost:5000/placeOrder', data)
