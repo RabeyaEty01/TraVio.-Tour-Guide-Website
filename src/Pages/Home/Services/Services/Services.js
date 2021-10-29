@@ -15,7 +15,7 @@ const Services = () => {
             <h1>Our Tour Packages</h1>
             <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
                     {
-                        services.map(service =>
+                        services.map((service,index) =>
                             <div class="col">
                             <div className="choose-card card shadow rounded h-100 p-4 border-0">
                                 <img  className="img-fluid" src={service?.img} alt="" />
@@ -23,7 +23,9 @@ const Services = () => {
                                     <h5 className="card-title fw-bold">{service?.name}</h5>
                                     <div className="d-flex justify-content-around">
                                     </div>
+                                    <p class="card-text text-center text-secondary">{service?.duration}</p>
                                     <p class="card-text text-center text-secondary">{service?.description}</p>
+                                    <p class="card-text text-center text-secondary">Seat: {service?.seat}</p>
                                     <h3 class="card-text fw-bold"> ${service?.price}</h3>
                                  <Link to={`/services/booking/${service._id}`}>
                                  <button className="bt btn-danger">Book Now</button>
