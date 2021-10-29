@@ -22,7 +22,7 @@ const PlaceOrder = () => {
     const onSubmit = (data) => {
         data.status = "pending";
         data.serviceDetails = service;
-        
+
         axios.post('http://localhost:5000/placeOrder', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -63,7 +63,7 @@ const PlaceOrder = () => {
 
                         <textarea required className="rounded p-2 m-2" placeholder="Additional Note" {...register("note")} />
 
-                        <input readOnly className="rounded p-2 m-2" defaultValue={service?.price} {...register("price")} />
+                        <input readOnly className="rounded p-2 m-2" defaultValue={service.price} {...register("price")} />
 
                         {errors.exampleRequired && <span>This field is required</span>}
 
