@@ -19,9 +19,10 @@ const PlaceOrder = () => {
     }, [])
 
     //Place Order
-    const onSubmit = data => {
-        console.log(data);
-
+    const onSubmit = (data) => {
+        data.status = "pending";
+        data.serviceDetails = service;
+        
         axios.post('http://localhost:5000/placeOrder', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -30,8 +31,6 @@ const PlaceOrder = () => {
                 }
             })
     };
-
-
 
     return (
         <div className="container">
@@ -56,7 +55,7 @@ const PlaceOrder = () => {
 
                         <input readOnly className="rounded p-2 m-2 " defaultValue={user.displayName} {...register("name")} />
 
-                        <input readOnly  className="rounded p-2 m-2 " defaultValue={user.email} {...register("email")} />
+                        <input readOnly className="rounded p-2 m-2 " defaultValue={user.email} {...register("email")} />
 
                         <input required className="rounded p-2 m-2 " placeholder="Address" {...register("address")} />
 
