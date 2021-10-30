@@ -31,7 +31,23 @@ const ManageAllOrders = () => {
         }
     }
 
-
+    //UPDATE STATUS
+    const handleUpdateStatus = (id) => {
+        const url = `http://localhost:5000/orders/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orders)
+        })
+            .then(res=>res.json())
+            .then(data=>{
+               if(data.modifiedCount > 0){
+                   alert('Updated Successfully.')
+               }
+            })
+    }
 
 
     return (
@@ -69,7 +85,7 @@ const ManageAllOrders = () => {
                                     <td>{order.price}</td>
                                     <td>{order.status}</td>
                                     <td>
-                                        <button className="btn btn-success">Approval</button>
+                                        <button onClick={()=>handleUpdateStatus(order._id)} className="btn btn-success">Approval</button>
                                     </td>
                                     <td>
                                         <button onClick={() => handleDeleteBookedOrder(order._id)} className="btn btn-danger">Delete</button>
