@@ -2,6 +2,8 @@ import React from 'react';
 import { Link,useHistory ,useLocation } from 'react-router-dom';
 import loginImg from '../../../images/login.jpg';
 import useAuth from '../../../Hooks/useAuth';
+import logo from '../../../images/logo1.png';
+
 import './Login.css';
 const Login = () => {
     const {signInUsingGoogle} = useAuth();
@@ -25,7 +27,7 @@ const Login = () => {
                         <img className=" img-fluid login-img" src={loginImg} alt="" />
                     </div>
                     <div className="col-lg-7 px-5 pt-5 text-start">
-                        <h1 className="fw-bold py-3 ">Logo</h1>
+                        <h1 className="fw-bold py-3 ">Tra<span className="text-warning">Vio</span></h1>
                         <h4>Sign into your account</h4>
                         <form>
                             <div className="form-row">
