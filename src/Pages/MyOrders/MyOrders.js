@@ -37,6 +37,7 @@ const MyOrders = () => {
 
     return (
         <div className="container">
+            <h1 className="my-3">Welcome, {user.displayName}</h1>
             <h3>Your Total Order: {myOrders.length}</h3>
             {myOrders.length === 0 ?
                 <Spinner animation="border" role="status">
