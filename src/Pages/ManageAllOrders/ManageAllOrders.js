@@ -33,7 +33,7 @@ const ManageAllOrders = () => {
 
     //UPDATE STATUS
     const handleUpdateStatus = (id) => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://fathomless-crag-16250.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
