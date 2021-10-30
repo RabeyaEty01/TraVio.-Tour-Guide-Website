@@ -1,7 +1,6 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import logo from '../../../images/logo1.png';
-import logo1 from '../../../images/logo.png';
 import useAuth from '../../../Hooks/useAuth';
 import './Header.css';
 
@@ -11,26 +10,25 @@ const Header = () => {
 
     return (
         <>
-            <Navbar bg="dark" sticky="top" collapseOnSelect expand="lg">
+            <Navbar bg="dark"  sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Toggle />
                     <Navbar.Brand href="#home">
-                        <img className="justify-content-start" height="50px" width="80px" src={logo1} alt="" />
-                        <img className="justify-content-start" height="30px" width="150px" src={logo} alt="" />
+                        <img className="justify-content-start" height="20px" width="100px" src={logo} alt="" />
                     </Navbar.Brand>
 
-                    <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                        <Nav.Link as={HashLink} to="#">Blogs</Nav.Link>
+                    <Navbar.Collapse className="justify-content-end ">
+                        <Nav.Link className="text-white" as={HashLink} to="/home#home">Home</Nav.Link>
+                        <Nav.Link className="text-white"  as={HashLink} to="#">Blogs</Nav.Link>
                         {user.email &&
 
                             <>
-                                <Nav.Link as={HashLink} to="/myOrders">My Orders</Nav.Link>
-                                <Nav.Link as={HashLink} to="/manageOrders">Manage All Orders</Nav.Link>
-                                <Nav.Link as={HashLink} to="/addService">Add A New Service</Nav.Link>
+                                <Nav.Link className="text-white" as={HashLink} to="/myOrders">My Orders</Nav.Link>
+                                <Nav.Link className="text-white" as={HashLink} to="/manageOrders">Manage All Orders</Nav.Link>
+                                <Nav.Link className="text-white" as={HashLink} to="/addService">Add A New Service</Nav.Link>
 
                                 <Nav.Link>
-                                    <h6 className="my-3" type="text" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My Profile</h6>
+                                    <h6 className="my-3 text-white" type="text" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My Profile</h6>
 
                                     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                                         <div className="offcanvas-header">
@@ -70,9 +68,9 @@ const Header = () => {
 
                         {user.email &&
                             <Navbar.Text>
-                                Signed in as:
-                                <span className="fw-bold"> {user.displayName}</span>
-                                <span>  <img width="49px" height="49px" className="rounded-circle" src={user.photoURL} alt="" /></span>
+                              <small className="text-white">Signed in as:</small>
+                                <span className="text-primary"> {user.displayName}</span>
+                                <span>  <img width="39px" height="39px" className="rounded-circle" src={user.photoURL} alt="" /></span>
                             </Navbar.Text>
 
                         }

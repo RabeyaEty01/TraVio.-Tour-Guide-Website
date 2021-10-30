@@ -13,7 +13,7 @@ const PlaceOrder = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://fathomless-crag-16250.herokuapp.com/services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
@@ -23,7 +23,7 @@ const PlaceOrder = () => {
         data.status = "Pending";
         data.serviceDetails = service;
 
-        axios.post('http://localhost:5000/placeOrder', data)
+        axios.post('https://fathomless-crag-16250.herokuapp.com/placeOrder', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Order Placed Successfully');

@@ -10,7 +10,7 @@ const AddService = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/addService', data)
+        axios.post('https://fathomless-crag-16250.herokuapp.com/addService', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Product Added Successfully');

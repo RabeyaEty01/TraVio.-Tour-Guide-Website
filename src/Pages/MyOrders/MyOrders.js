@@ -7,7 +7,7 @@ const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`https://fathomless-crag-16250.herokuapp.com/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, []);
@@ -18,7 +18,7 @@ const MyOrders = () => {
     const handleDeleteBookedOrder = id => {
         const proceed = window.confirm('Are you sure , you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://fathomless-crag-16250.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -1,0 +1,13 @@
+.choose-card{
+    border-radius: 10px ;
+    font-family: 'Poppins';
+}
+.choose-card:hover{
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.363);
+    border-radius: 10px;
+    transform: scale(1.1);
+    transition: transform 3s ;
+}
+.choose-card img{
+    border-radius: 10px;
+}

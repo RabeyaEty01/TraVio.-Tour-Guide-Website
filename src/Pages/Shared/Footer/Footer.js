@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Footer = () => {
     return (
       
@@ -89,7 +90,7 @@ const Footer = () => {
                     </div>
                     <hr className="text-secondary"/>
                     <div className ="text-white d-flex justify-content-between">
-                    <p>All rights Reserved <i class ="far fa-copyright"></i> GATEWAY Travel Guide, 2021</p>
+                    <p>All rights Reserved <i class ="far fa-copyright"></i> Travio. Travel Guide, 2021</p>
                     <p>Made with <i class ="fas fa-heart text-warning "></i> by <b>Rabeya Ety</b></p>
 
                     </div>
