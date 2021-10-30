@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import AdminSidebar from '../Shared/AdminSidebar/AdminSidebar';
 import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
@@ -41,66 +42,71 @@ const ManageAllOrders = () => {
             },
             body: JSON.stringify(orders)
         })
-            .then(res=>res.json())
-            .then(data=>{
-               if(data.modifiedCount > 0){
-                   alert('Approved Successfully.')
-                  
-               }
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Approved Successfully.')
+
+                }
             })
     }
 
 
     return (
-        <div className="container my-5">
-            <h2 className="fw-bold text-primary text-center">Manage All Bookings</h2>
-            {orders.length === 0 ?
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
-                :
-                <div>
-                    <table class="table table-responsive table-responsive-sm table-responsive-md shadow table-striped table-bordered table-hover">
-                        <thead className="table-dark">
-                            <tr>
-                                <th scope="col">Order ID</th>
-                                <th scope="col">Package Name</th>
-                                <th scope="col">UserName</th>
-                                <th scope="col">UserEmail</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Action</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {
-                                orders.map(order => <tr>
-                                    <td>{order._id}</td>
-                                    <td>{order.serviceDetails.name}</td>
-                                    <td>{order.name}</td>
-                                    <td>{order.email}</td>
-                                    <td>{order.phone}</td>
-                                    <td>{order?.serviceDetails.price}</td>
-                                    <td>{order.status}</td>
-                                    <td>
-                                        <button onClick={()=>handleUpdateStatus(order._id)} className="btn btn-success">Approval</button>
-                                    </td>
-                                    <td>
-                                        <button onClick={() => handleDeleteBookedOrder(order._id)} className="btn btn-danger">Delete</button>
-                                    </td>
+        <>
+            <div className="dashboard-container">
+                <AdminSidebar></AdminSidebar>
+            </div>
+            <div className="container my-5">
+                <h1 className="fw-bold text-primary text-center my-5">Manage All Bookings</h1>
+                {orders.length === 0 ?
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                    :
+                    <div>
+                        <table class="table table-responsive table-responsive-sm table-responsive-md shadow table-striped table-bordered table-hover">
+                            <thead className="table-dark">
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Package Name</th>
+                                    <th scope="col">UserName</th>
+                                    <th scope="col">UserEmail</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Action</th>
                                 </tr>
+                            </thead>
 
-                                )
-                            }
-                        </tbody>
+                            <tbody>
+                                {
+                                    orders.map(order => <tr>
+                                        <td>{order._id}</td>
+                                        <td>{order.serviceDetails.name}</td>
+                                        <td>{order.name}</td>
+                                        <td>{order.email}</td>
+                                        <td>{order.phone}</td>
+                                        <td>{order?.serviceDetails.price}</td>
+                                        <td>{order.status}</td>
+                                        <td>
+                                            <button onClick={() => handleUpdateStatus(order._id)} className="btn btn-success">Approval</button>
+                                        </td>
+                                        <td>
+                                            <button onClick={() => handleDeleteBookedOrder(order._id)} className="btn btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
 
-                    </table>
+                                    )
+                                }
+                            </tbody>
 
-                </div>}
-        </div>
+                        </table>
+
+                    </div>}
+            </div>
+        </>
     );
 };
 

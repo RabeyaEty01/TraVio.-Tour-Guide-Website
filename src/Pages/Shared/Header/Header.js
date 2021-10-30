@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <>
-            <Navbar bg="dark"  sticky="top" collapseOnSelect expand="lg">
+            <Navbar bg="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Toggle />
                     <Navbar.Brand href="#home">
@@ -19,13 +19,12 @@ const Header = () => {
 
                     <Navbar.Collapse className="justify-content-end ">
                         <Nav.Link className="text-white" as={HashLink} to="/home#home">Home</Nav.Link>
-                        <Nav.Link className="text-white"  as={HashLink} to="#">Blogs</Nav.Link>
+                        <Nav.Link className="text-white" as={HashLink} to="#">Blogs</Nav.Link>
+                        <Nav.Link className="text-white" as={HashLink} to="tourGuide#tourGuide">Tour Guide</Nav.Link>
                         {user.email &&
 
                             <>
-                                <Nav.Link className="text-white" as={HashLink} to="/myOrders">My Orders</Nav.Link>
-                                <Nav.Link className="text-white" as={HashLink} to="/manageOrders">Manage All Orders</Nav.Link>
-                                <Nav.Link className="text-white" as={HashLink} to="/addService">Add A New Service</Nav.Link>
+                                <Nav.Link className="text-white" as={HashLink} to="/adminDashboard">Admin Dashboard</Nav.Link>
 
                                 <Nav.Link>
                                     <h6 className="my-3 text-white" type="text" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My Profile</h6>
@@ -68,7 +67,7 @@ const Header = () => {
 
                         {user.email &&
                             <Navbar.Text>
-                              <small className="text-white">Signed in as:</small>
+                                <small className="text-white">Signed in as:</small>
                                 <span className="text-primary"> {user.displayName}</span>
                                 <span>  <img width="39px" height="39px" className="rounded-circle" src={user.photoURL} alt="" /></span>
                             </Navbar.Text>

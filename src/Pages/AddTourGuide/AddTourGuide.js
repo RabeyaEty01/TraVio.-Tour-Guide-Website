@@ -3,18 +3,18 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import addserviceimg from '../../images/addService.jpg';
 import AdminSidebar from '../Shared/AdminSidebar/AdminSidebar';
-import './AddService.css';
 
-const AddService = () => {
+
+const AddTourGuide = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('https://fathomless-crag-16250.herokuapp.com/addService', data)
+        axios.post('http://localhost:5000/addEmployee', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Product Added Successfully');
+                    alert('Employee Added Successfully');
                     reset();
                 }
             })
@@ -25,7 +25,7 @@ const AddService = () => {
             <div className="dashboard-container">
                 <AdminSidebar></AdminSidebar>
             </div>
-
+            
             <div className="add-section">
                 <div className="add-div container shadow my-5">
 
@@ -34,18 +34,20 @@ const AddService = () => {
                             <img className="img-fluid h-100 w-100" src={addserviceimg} alt="" />
                         </div>
                         <div className="col-lg-7 px-5 pt-5 text-start">
-                            <h2 className="m-3 p-2">Please Add A New Package</h2>
+                            <h2 className="m-3 p-2">Please Add A New Tour Guide</h2>
                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
                                 <input required className="rounded p-2 m-2 " placeholder="Name" {...register("name")} />
 
-                                <input required className="rounded p-2 m-2 " placeholder="Duration" {...register("duration")} />
+                                <input required className="rounded p-2 m-2 " placeholder="Employee Category" {...register("category")} />
 
-                                <input required className="rounded p-2 m-2 " placeholder="Available Seat" {...register("seat")} />
+                                <input required className="rounded p-2 m-2 " type="date" placeholder="Start Date" {...register("startDate")} />
 
-                                <input required className="rounded p-2 m-2" placeholder="Price" type="number"{...register("price", { required: true })} />
+                                <input required className="rounded p-2 m-2" placeholder="status" {...register("status", { required: true })} />
 
-                                <textarea required className="rounded p-2 m-2" placeholder="Description" {...register("description")} />
+                                <textarea required className="rounded p-2 m-2" placeholder="Contact Number" {...register("contact")} />
+
+                                <textarea required className="rounded p-2 m-2" placeholder="Address" {...register("address")} />
 
                                 <input required className="rounded p-2 m-2" placeholder="Image Url" {...register("img")} />
 
@@ -61,5 +63,5 @@ const AddService = () => {
     );
 };
 
-export default AddService;
+export default AddTourGuide;
 

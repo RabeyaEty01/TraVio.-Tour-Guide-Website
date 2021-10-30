@@ -12,6 +12,10 @@ import NotFound from './Pages/NotFound/NotFound';
 import PrivateRoute from '../src/Pages/Login/PrivateRoute/PrivateRoute';
 import Home from './Pages/Home/Home/Home';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import TourGuide from './Pages/TourGuide/TourGuide';
+import AddTourGuide from './Pages/AddTourGuide/AddTourGuide';
+import ManageEmployee from './Pages/ManageEmployee/ManageEmployee';
+import AdminDashboard from './Pages/AdminDashBoard/AdminDashboard';
 
 function App() {
   return (
@@ -38,6 +42,22 @@ function App() {
           <PrivateRoute exact path="/services/booking/:id">
             <PlaceOrder></PlaceOrder>
           </PrivateRoute>
+
+          <PrivateRoute exact path="/adminDashboard">
+           <AdminDashboard></AdminDashboard>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/manageEmployee">
+           <ManageEmployee></ManageEmployee>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/addEmployee">
+           <AddTourGuide></AddTourGuide>
+          </PrivateRoute>
+
+          <Route exact path="/tourGuide">
+           <TourGuide></TourGuide>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>

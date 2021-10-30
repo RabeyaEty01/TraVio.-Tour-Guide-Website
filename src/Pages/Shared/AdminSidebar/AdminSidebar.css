@@ -1,0 +1,61 @@
+.dashboard-container{
+    position: relative;
+    width: 100%;
+}
+.navigation{
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    background-color: #003147;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+}
+
+.navigation ul li:nth-child(0){
+  margin-bottom: 40px;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li a:hover{
+    color: rgb(240, 61, 61);
+    font-weight: bold;
+}
+.navigation ul li a .icon .fa, .fas{
+    color: white;
+    font-size: 18px;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding:0 10px ;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.main-section{
+    position:absolute;
+    width: calc(100%-280px);
+    left: 280px;
+    min-height: 100vh; ;
+    transition: 0.5s;
+
+}
