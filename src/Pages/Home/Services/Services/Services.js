@@ -14,7 +14,7 @@ const Services = () => {
     return (
         <div className="container">
 
-            <h2 className="animate__animated animate__bounceInLeft my-5 text-center  mx-5 py-2"><small className="fw-bold ">___Our</small> <small className="text-secondary">Popular </small><small className="text-secondary"> Tour</small> <small className="fw-bold">Packages___</small>
+            <h2 className="animate__animated animate__bounceInLeft text-center mt-0"><small className="fw-bold ">___Our</small> <small className="text-secondary">Popular </small><small className="text-secondary"> Tour</small> <small className="fw-bold">Packages___</small>
             </h2>
 
 
