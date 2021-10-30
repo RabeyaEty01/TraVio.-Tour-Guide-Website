@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import './PlaceOrder.css';
 import useAuth from '../../Hooks/useAuth';
 import axios from 'axios';
+import { Spinner } from 'react-bootstrap';
 
 const PlaceOrder = () => {
     const { id } = useParams();
@@ -37,16 +38,21 @@ const PlaceOrder = () => {
             <div className="row no-gutters">
                 <div className="m-3 my-4 p-2 col-lg-5">
                     <div className=" mb-3">
-                        <div className="row g-0">
-                            <img src={service.img} className="img-fluid h-100 placeorder-img" alt="..." />
-                            <div className="text-start card-body">
-                                <h5 className="card-title">{service?.name}</h5>
-                                <p className="card-text  text-secondary">Availability : {service?.duration}</p>
-                                <p className="card-text  text-secondary">{service?.description}</p>
-                                <p className="card-text text-secondary">Seat: {service?.seat}</p>
-                                <h3 className="card-text fw-bold"> ${service?.price}</h3>
-                            </div>
-                        </div>
+                        {service.length === 0 ?
+                            <Spinner animation="border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </Spinner>
+                            :
+                            <div className="row g-0">
+                                <img src={service.img} className="img-fluid h-100 placeorder-img" alt="..." />
+                                <div className="text-start card-body">
+                                    <h5 className="card-title">{service?.name}</h5>
+                                    <p className="card-text  text-secondary">Availability : {service?.duration}</p>
+                                    <p className="card-text  text-secondary">{service?.description}</p>
+                                    <p className="card-text text-secondary">Seat: {service?.seat}</p>
+                                    <h3 className="card-text fw-bold"> ${service?.price}</h3>
+                                </div>
+                            </div>}
                     </div>
                 </div>
                 <div className="col-lg-6">
@@ -62,9 +68,6 @@ const PlaceOrder = () => {
                         <input required className="rounded p-2 m-2" placeholder="Phone" type="phone"{...register("phone", { required: true })} />
 
                         <textarea required className="rounded p-2 m-2" placeholder="Additional Note" {...register("note")} />
-
-                        <input readOnly className="rounded p-2 m-2" defaultValue={service.price}
-                        {...register("price")} />
 
                         {errors.exampleRequired && <span>This field is required</span>}
 

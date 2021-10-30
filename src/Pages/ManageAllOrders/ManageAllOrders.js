@@ -44,7 +44,8 @@ const ManageAllOrders = () => {
             .then(res=>res.json())
             .then(data=>{
                if(data.modifiedCount > 0){
-                   alert('Updated Successfully.')
+                   alert('Approved Successfully.')
+                  
                }
             })
     }
@@ -82,7 +83,7 @@ const ManageAllOrders = () => {
                                     <td>{order.name}</td>
                                     <td>{order.email}</td>
                                     <td>{order.phone}</td>
-                                    <td>{order.price}</td>
+                                    <td>{order?.serviceDetails.price}</td>
                                     <td>{order.status}</td>
                                     <td>
                                         <button onClick={()=>handleUpdateStatus(order._id)} className="btn btn-success">Approval</button>
