@@ -23,10 +23,10 @@ const Destination = () => {
                 </div>
             </div>
 
-            <div class="animate__animated animate__bounceInRight row mt-5">
+            <div class="animate__animated animate__bounceInRight row mt-5 ">
                 <h2 className="animate__animated animate__bounceInLeft my-5 text-center  mx-5 py-2"><small className="fw-bold ">___Our</small> <small className="text-secondary">Popular </small><small className="fw-bold">Destinations___</small>
                 </h2>
-                <div class="col-3">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="photo-frame row mb-3">
                         <div className="photo">
                             <img className="img-fluid h-100" src="https://i.ibb.co/D9spmsZ/1.jpg" alt="" />
@@ -44,7 +44,7 @@ const Destination = () => {
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="photo-frame row mb-3">
 
                         <div className="photo">
@@ -65,7 +65,7 @@ const Destination = () => {
 
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="photo-frame row mb-3">
                         <div className="photo">
                             <img className="img-fluid h-100" src="https://i.ibb.co/YZzRqFy/9.jpg" alt="" />
@@ -83,7 +83,7 @@ const Destination = () => {
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="photo-frame row mb-3">
                         <div className="photo">
                             <img className="img-fluid h-100" src="https://i.ibb.co/TmMD1HP/8.jpg" alt="" />
