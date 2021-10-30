@@ -68,7 +68,7 @@ const ManageAllOrders = () => {
                     </Spinner>
                     :
                     <div>
-                        <table class="table table-responsive table-responsive-sm table-responsive-md shadow table-striped table-bordered table-hover">
+                        <table class="table table-responsive table-responsive-sm table-responsive-md shadow table-striped table-bordered table-hover mx-5">
                             <thead className="table-dark">
                                 <tr>
                                     <th scope="col">Order ID</th>
