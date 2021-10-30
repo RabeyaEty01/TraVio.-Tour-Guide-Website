@@ -6,18 +6,16 @@ import './Map.css';
 const Map = () => {
     return (
         <div className="conatiner">
-            <div className="row container">
-                <div className="col-lg-10 container">
-                    <div className="animate__animated animate__bounceInLeft about-h2 ">
-                        <h2 className="text-start mx-5 py-2"><small className="fw-bold ">Explore</small> <small className="text-secondary">the World </small> <br /> <small className="fw-bold">for Travel</small>
-                        </h2>
-                    </div>
+            <div className="row">
 
-                    <div className="animate__animated animate__bounceInLeft w3-panel w3-leftbar w3-light-grey">
-                        <p className="w3-xlarge w3-serif mx-5 text-start"><i>"The world is a book and those who do not travel read only one page.Jobs fill your pockets, adventures fill your soul.The journey of a thousand miles begins with a single step.Travel is the only thing you buy that makes you richer"</i></p>
-                        <p className="mx-5  text-start">______________________________Albert Fransisco</p>
-                    </div>
+                <h2 className="animate__animated animate__bounceInLeft text-center mt-0"><small className="fw-bold ">___Explore</small> <small className="text-secondary">the World </small><small className="text-secondary">for</small> <small className="fw-bold">Travel___</small>
+                </h2>
+
+                <div className="animate__animated animate__bounceInLeft w3-panel w3-leftbar w3-light-grey">
+                    <p className="w3-xlarge w3-serif mx-5 "><i>`"The world is a book and those who do not travel read only one page.Jobs fill your pockets, <br />  adventures fill your soul. The journey of a thousand miles begins with a single step. <br /> Travel is the only thing you buy that makes you richer"`</i></p>
+                    <p className="mx-5 ">______________________________Albert Fransisco</p>
                 </div>
+
             </div>
             <div className="map-inner container my-5">
                 <div className="d-flex justify-content-around">

@@ -16,6 +16,7 @@ import TourGuide from './Pages/TourGuide/TourGuide';
 import AddTourGuide from './Pages/AddTourGuide/AddTourGuide';
 import ManageEmployee from './Pages/ManageEmployee/ManageEmployee';
 import AdminDashboard from './Pages/AdminDashBoard/AdminDashboard';
+import Registration from './Pages/Registration/Registration';
 
 function App() {
   return (
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Registration></Registration>
           </Route>
           <Route path="*">
             <NotFound></NotFound>

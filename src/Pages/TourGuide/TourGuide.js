@@ -7,7 +7,7 @@ const TourGuide = () => {
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/employees')
+        fetch('https://fathomless-crag-16250.herokuapp.com/employees')
             .then(res => res.json())
             .then(data => setEmployees(data))
     }, []);

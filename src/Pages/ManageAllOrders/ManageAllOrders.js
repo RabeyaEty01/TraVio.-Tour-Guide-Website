@@ -57,6 +57,9 @@ const ManageAllOrders = () => {
             <div className="dashboard-container">
                 <AdminSidebar></AdminSidebar>
             </div>
+            <div className="main-section">
+
+            </div>
             <div className="container my-5">
                 <h1 className="fw-bold text-primary text-center my-5">Manage All Bookings</h1>
                 {orders.length === 0 ?

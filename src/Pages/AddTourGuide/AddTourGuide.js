@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import addserviceimg from '../../images/addService.jpg';
+import addserviceimg from '../../images/addService.png';
 import AdminSidebar from '../Shared/AdminSidebar/AdminSidebar';
 
 
@@ -11,7 +11,7 @@ const AddTourGuide = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/addEmployee', data)
+        axios.post('https://fathomless-crag-16250.herokuapp.com/addEmployee', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Employee Added Successfully');
@@ -27,14 +27,14 @@ const AddTourGuide = () => {
             </div>
             
             <div className="add-section">
-                <div className="add-div container shadow my-5">
+                <div className="add-div my-5">
 
                     <div className="d-flex">
                         <div className="col-lg-5">
                             <img className="img-fluid h-100 w-100" src={addserviceimg} alt="" />
                         </div>
                         <div className="col-lg-7 px-5 pt-5 text-start">
-                            <h2 className="m-3 p-2">Please Add A New Tour Guide</h2>
+                            <h1 className="m-3 p-2">Add New Employee</h1>
                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
                                 <input required className="rounded p-2 m-2 " placeholder="Name" {...register("name")} />

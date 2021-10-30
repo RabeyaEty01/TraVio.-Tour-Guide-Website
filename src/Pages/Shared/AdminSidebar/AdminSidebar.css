@@ -54,8 +54,7 @@
 .main-section{
     position:absolute;
     width: calc(100%-280px);
-    left: 280px;
-    min-height: 100vh; ;
+    left: 290px;
     transition: 0.5s;
 
 }

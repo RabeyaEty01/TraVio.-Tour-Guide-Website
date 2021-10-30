@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link,useHistory ,useLocation } from 'react-router-dom';
-import loginImg from '../../../images/login.png';
-import useAuth from '../../../Hooks/useAuth';
+import loginImg from '../../images/login.png';
+import useAuth from '../../Hooks/useAuth';
 
-import './Login.css';
-const Login = () => {
+
+const Registration = () => {
     const {signInUsingGoogle} = useAuth();
     const location =useLocation();
     const history = useHistory();
@@ -27,7 +27,7 @@ const Login = () => {
                     </div>
                     <div className="col-lg-7 px-5 pt-5 text-start">
                         <h1 className="fw-bold py-3 ">Tra<span className="text-warning">Vio</span></h1>
-                        <h4>Sign into your account</h4>
+                        <h4>Create New Account</h4>
                         <form>
                             <div className="form-row">
                                 <div className="col-lg-7">
@@ -41,11 +41,11 @@ const Login = () => {
                             </div>
                             <div className="form-row">
                                 <div className="col-lg-7">
-                                    <button type="button" className="btn1 mt-3 my-3">Login</button>
+                                    <button type="button" className="btn1 mt-3 my-3">Create Account</button>
                                 </div>
                             </div>
 
-                            <p>Don't have an account? <Link to="/register">Register here</Link></p>
+                            <p>Already have an account? <Link to="/login">Go to Login </Link></p>
 
                             <h5 className="fw-bold">
                             OR</h5>
@@ -64,4 +64,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

@@ -6,30 +6,30 @@ const ManageEmployee = () => {
 
     const [employees, setEmployees] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/employees')
+        fetch('https://fathomless-crag-16250.herokuapp.com/employees')
             .then(res => res.json())
             .then(data => setEmployees(data));
     }, []);
 
-    // //DELETE Booked Order
-    // const handleDeleteBookedOrder = id => {
-    //     const proceed = window.confirm('Are you sure , you want to delete?');
-    //     if (proceed) {
-    //         const url = `https://fathomless-crag-16250.herokuapp.com/orders/${id}`;
-    //         fetch(url, {
-    //             method: 'DELETE'
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 if (data.deletedCount > 0) {
-    //                     alert('Deleted successfully');
+    //DELETE Booked Order
+    const handleDeleteEmployee = id => {
+        const proceed = window.confirm('Are you sure , you want to delete?');
+        if (proceed) {
+            const url = `https://fathomless-crag-16250.herokuapp.com/employees/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted successfully');
 
-    //                     const remainingOrders = orders.filter(order => order._id !== id);
-    //                     setOrders(remainingOrders);
-    //                 }
-    //             })
-    //     }
-    // }
+                        const remainingEmployee = employees.filter(employee => employee._id !== id);
+                        setEmployees(remainingEmployee);
+                    }
+                })
+        }
+    }
 
 
 
@@ -73,9 +73,9 @@ const ManageEmployee = () => {
                                         <td>{employee.contact}</td>
                                         <td>{employee.address}</td>
                                         <td>{employee.status}</td>
-                                        {/* <td>
-                                        <button onClick={() => handleDeleteBookedOrder(order._id)} className="btn btn-danger">Delete</button>
-                                    </td> */}
+                                        <td>
+                                        <button onClick={() => handleDeleteEmployee(employee._id)} className="btn btn-danger">Delete</button>
+                                    </td>
                                     </tr>
 
                                     )

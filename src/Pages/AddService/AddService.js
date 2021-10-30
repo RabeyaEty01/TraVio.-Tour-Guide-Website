@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import addserviceimg from '../../images/addService.jpg';
+import addserviceimg from '../../images/addService.png';
 import AdminSidebar from '../Shared/AdminSidebar/AdminSidebar';
 import './AddService.css';
 
@@ -25,16 +25,17 @@ const AddService = () => {
             <div className="dashboard-container">
                 <AdminSidebar></AdminSidebar>
             </div>
-
+            <div className="main-section">
+                
+            </div>
             <div className="add-section">
-                <div className="add-div container shadow my-5">
-
+                <div className="add-div my-5">
                     <div className="d-flex">
                         <div className="col-lg-5">
                             <img className="img-fluid h-100 w-100" src={addserviceimg} alt="" />
                         </div>
-                        <div className="col-lg-7 px-5 pt-5 text-start">
-                            <h2 className="m-3 p-2">Please Add A New Package</h2>
+                        <div className="container col-lg-7 px-5 pt-5 text-start">
+                            <h1 className="m-3 p-2">Please Add A New Package</h1>
                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
                                 <input required className="rounded p-2 m-2 " placeholder="Name" {...register("name")} />
