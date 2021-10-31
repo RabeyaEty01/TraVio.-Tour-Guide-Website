@@ -3,7 +3,6 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import addserviceimg from '../../images/addService.png';
 import './AddService.css';
 
 const AddService = () => {
@@ -94,16 +93,10 @@ const AddService = () => {
                     <main className="col px-0 flex-grow-1">
                         <div className="container py-3">
 
-                            <div className="main-section">
-
-                            </div>
                             <div className="add-section">
                                 <div className="add-div my-5">
-                                    <div className="d-flex">
-                                        <div className="col-lg-5">
-                                            <img className="img-fluid h-100 w-100" src={addserviceimg} alt="" />
-                                        </div>
-                                        <div className="container col-lg-7 px-5 pt-5 text-start">
+                                    <div className="container">
+                                        <div className=" px-5 pt-5 text-start">
                                             <h1 className="m-3 p-2">Please Add A New Package</h1>
                                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 

@@ -3,8 +3,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import addserviceimg from '../../images/addService.png';
-import AdminSidebar from '../Shared/AdminSidebar/AdminSidebar';
+
 
 
 const AddTourGuide = () => {
@@ -97,13 +96,9 @@ const AddTourGuide = () => {
 
                             <div className="add-section">
                                 <div className="add-div my-5">
-
-                                    <div className="d-flex">
-                                        <div className="col-lg-5">
-                                            <img className="img-fluid h-100 w-100" src={addserviceimg} alt="" />
-                                        </div>
-                                        <div className="col-lg-7 px-5 pt-5 text-start">
-                                            <h1 className="m-3 p-2">Add New Employee</h1>
+                                    <div>
+                                        <div className="container px-5 pt-5 text-start">
+                                            <h1 className="m-3 p-2">Please Add New Employee</h1>
                                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
                                                 <input required className="rounded p-2 m-2 " placeholder="Name" {...register("name")} />
