@@ -1,15 +1,4 @@
 
-.add-div{
-    position: absolute;
-    min-width: 310px;
-    min-height: 420px;
-    margin: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
- }
- 
- 
  .add-form{
      display: flex;
      flex-direction: column;

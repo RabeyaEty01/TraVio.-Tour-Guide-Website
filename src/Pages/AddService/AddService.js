@@ -92,12 +92,9 @@ const AddService = () => {
 
                     <main className="col px-0 flex-grow-1">
                         <div className="container py-3">
-
-                            <div className="add-section">
-                                <div className="add-div my-5">
-                                    <div className="container">
-                                        <div className=" px-5 pt-5 text-start">
-                                            <h1 className="m-3 p-2">Please Add A New Package</h1>
+                                    <div className="container col-lg-8 col-sm-12">
+                                        <div>
+                                            <h1 className="my-3 ">Please Add A New Package</h1>
                                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
                                                 <input required className="rounded p-2 m-2 " placeholder="Name" {...register("name")} />
@@ -119,10 +116,6 @@ const AddService = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        </div>
-
                     </main>
                 </div>
             </div>

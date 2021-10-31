@@ -94,10 +94,8 @@ const AddTourGuide = () => {
                     <main className="col px-0 flex-grow-1">
                         <div className="container py-3">
 
-                            <div className="add-section">
-                                <div className="add-div my-5">
-                                    <div>
-                                        <div className="container px-5 pt-5 text-start">
+                                    <div className="container col-lg-8 col-sm-12">
+                                        <div>
                                             <h1 className="m-3 p-2">Please Add New Employee</h1>
                                             <form className="add-form " onSubmit={handleSubmit(onSubmit)}>
 
@@ -122,10 +120,6 @@ const AddTourGuide = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        </div>
-
                     </main>
                 </div>
             </div>

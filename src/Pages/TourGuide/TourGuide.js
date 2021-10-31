@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 
 const TourGuide = () => {

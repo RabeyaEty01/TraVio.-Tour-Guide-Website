@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import AdminSidebar from '../Shared/AdminSidebar/AdminSidebar';
 import './ManageAllOrders.css';
 
 const ManageAllOrders = () => {
@@ -117,8 +116,6 @@ const ManageAllOrders = () => {
                                             <span className="title"><h5 className="ms-3">Manage All Employee</h5></span>
                                         </Link>
                                     </li>
-
-
                                 </ul>
                             </div>
                         </nav>
@@ -126,7 +123,6 @@ const ManageAllOrders = () => {
 
                     <main className="col px-0 flex-grow-1">
                         <div className="container py-3">
-
                             <div className="container my-5">
                                 <h1 className="fw-bold text-primary text-center my-5">Manage All Bookings</h1>
                                 {orders.length === 0 ?
