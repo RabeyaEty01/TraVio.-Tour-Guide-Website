@@ -18,6 +18,7 @@ import ManageEmployee from './Pages/ManageEmployee/ManageEmployee';
 import AdminDashboard from './Pages/AdminDashBoard/AdminDashboard';
 import Registration from './Pages/Registration/Registration';
 
+
 function App() {
   return (
     <div className="App">
@@ -65,6 +66,7 @@ function App() {
           <Route path="/register">
             <Registration></Registration>
           </Route>
+
           <Route path="*">
             <NotFound></NotFound>
           </Route>

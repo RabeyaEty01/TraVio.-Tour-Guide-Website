@@ -24,7 +24,7 @@ const Destination = () => {
             </div>
 
             <div class="animate__animated animate__bounceInRight row mt-5 ">
-                <h2 className="animate__animated animate__bounceInLeft my-5 text-center  mx-5 py-2"><small className="fw-bold ">___Our</small> <small className="text-secondary">Popular </small><small className="fw-bold">Destinations___</small>
+                <h2 className="animate__animated animate__bounceInLeft my-5 text-center  mx-5 py-2"><small className="fw-bold ">___Popular </small> <small className="text-secondary">Destinations___</small>
                 </h2>
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="photo-frame row mb-3">
